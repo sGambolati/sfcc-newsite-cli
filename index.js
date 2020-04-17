@@ -1,6 +1,8 @@
 const chalk = require("chalk");
 const yargs = require("yargs");
-const os = require('os'); 
+const os = require('os');
+const rimraf = require('rimraf');
+const { v4: uuidv4 } = require('uuid');
 
 const { buildNewSiteChain } = require('./chains/builder');
 
@@ -22,7 +24,7 @@ const options = yargs
 console.clear();
 console.log(chalk.yellow("Creating a new SFCC site named:"),  chalk.greenBright.bold(options.sitename));
 
-const destinationPath = os.tmpdir() + '/' + 'babu';
+const destinationPath = os.tmpdir() + '/' + uuidv4();
 
 const chain = buildNewSiteChain({
     dataSourcePath: './site-source-data',
@@ -30,4 +32,14 @@ const chain = buildNewSiteChain({
     siteName: options.sitename,
 });
 
-chain.execute();
+chain.execute()
+    .then(() => {
+        // Delete temporary folder.
+        rimraf(destinationPath, (err) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log("Cleaned up.");
+            }
+        });
+    });
