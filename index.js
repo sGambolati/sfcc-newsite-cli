@@ -29,6 +29,7 @@ const destinationPath = os.tmpdir() + '/' + uuidv4();
 const chain = buildNewSiteChain({
     dataSourcePath: './site-source-data',
     dataDestinationPath: destinationPath,
+    replaceToken: /#-newsitename-#/g,
     siteName: options.sitename,
 });
 
