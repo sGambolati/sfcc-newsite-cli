@@ -6,8 +6,10 @@ class CopySourceData extends BaseChain {
         // Copy source files into a new folder
         console.log(`Copying into new folder from: ${this.data.dataSourcePath} to ${this.data.dataDestinationPath}.`);
 
-        return await this.copyDirectory(this.data.dataSourcePath, this.data.dataDestinationPath)
+        await this.copyDirectory(this.data.dataSourcePath, this.data.dataDestinationPath)
             .catch(err => console.error("Error: ", err));
+
+        return await super.execute();
     }
 
     copyDirectory(source, destination) {
