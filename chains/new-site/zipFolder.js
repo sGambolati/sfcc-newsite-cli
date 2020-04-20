@@ -4,7 +4,7 @@ var fs = require('fs');
 
 class ZipFolder extends BaseChain {
     async execute() {
-        const zipPath = /*__dirname + */ './example.zip';
+        const zipPath = `./${this.data.siteName}.zip`;
         console.log("Zipping updated folder to ", zipPath);
 
         await this.zipContent(this.data.dataDestinationPath, zipPath);
