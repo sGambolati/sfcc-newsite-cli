@@ -31,15 +31,15 @@ class ZipFolder extends BaseChain {
             });
 
             output.on('close', function() {
-                console.log(archive.pointer() + ' total bytes');
-                console.log('archiver has been finalized and the output file descriptor has closed.');
+                console.debug(archive.pointer() + ' total bytes');
+                console.debug('archiver has been finalized and the output file descriptor has closed.');
                 resolve();
             });
 
             // pipe archive data to the file
             archive.pipe(output);
 
-            archive.directory(folderToZip, 'new-subdir');
+            archive.directory(folderToZip, this.data.siteName);
 
             archive.finalize();
         });
