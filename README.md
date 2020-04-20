@@ -4,5 +4,5 @@ SalesForce New Site tool
 
 ## Example usage
 ```bash
-node . -n MyNewBrandSite -s [YOUR_API_SECRET] -k [YOUR_API_KEY]
+node . -n MyNewBrandSite -s [YOUR_API_SECRET] -k [YOUR_API_KEY] -i [YOUR_INSTANCE_URL]
 ```

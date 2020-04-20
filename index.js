@@ -11,6 +11,7 @@ const options = yargs
     .option("n", {alias: "sitename", describe: "New site name", type: "string", demandOption: true})
     .option("k", {alias: "api_key", describe: "Your User's API Key", type: "string", demandOption: true})
     .option("s", {alias: "api_secret", describe: "Your User's API secret", type: "string", demandOption: true})
+    .option("i", {alias: "instanceName", describe: "Your Instance Name", type: "string", demandOption: true})
     //.option("n", { alias: "name", describe: "Your name", type: "string", demandOption: true })
     .argv;
 
@@ -39,6 +40,7 @@ const proccess = async () => {
         siteName: options.sitename,
         apiKey: options.api_key,
         apiSecret: options.api_secret,
+        instanceName: options.instanceName
     });
 
     await chain.execute()
