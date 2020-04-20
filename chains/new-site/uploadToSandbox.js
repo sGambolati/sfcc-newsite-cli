@@ -5,7 +5,7 @@ class UploadToSandbox extends BaseChain {
     async execute() {
         console.log("Uploading file to Sandbox");
 
-        await this.uploadFile('bfgv-002.sandbox.us01.dx.commercecloud.salesforce.com', this.data.zipFilePath, this.data.token)
+        await this.uploadFile(this.data.instanceName, this.data.zipFilePath, this.data.token)
             .then(async () => {
                 return await super.execute();
             });
