@@ -9,6 +9,7 @@ class ZipFolder extends BaseChain {
 
         await this.zipContent(this.data.dataDestinationPath, zipPath);
 
+        this.data.zipFilePath = zipPath;
         return await super.execute();
     }
 
