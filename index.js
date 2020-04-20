@@ -21,26 +21,32 @@ const options = yargs
     // Import into Sandbox.
     // Delete temp folder.
 
-console.clear();
-console.log(chalk.yellow("Creating a new SFCC site named:"),  chalk.greenBright.bold(options.sitename));
+const proccess = async () => {
+    console.clear();
+    console.log(chalk.yellow("Creating a new SFCC site named:"),  chalk.greenBright.bold(options.sitename));
 
-const destinationPath = os.tmpdir() + '/' + uuidv4();
+    const destinationPath = os.tmpdir() + '/' + uuidv4();
 
-const chain = buildNewSiteChain({
-    dataSourcePath: './site-source-data',
-    dataDestinationPath: destinationPath,
-    replaceToken: /#-newsitename-#/g,
-    siteName: options.sitename,
-});
-
-chain.execute()
-    .then(() => {
-        // Delete temporary folder.
-        rimraf(destinationPath, (err) => {
-            if (err) {
-                console.error(err);
-            } else {
-                console.log("Cleaned up.");
-            }
-        });
+    const chain = buildNewSiteChain({
+        dataSourcePath: './site-source-data',
+        dataDestinationPath: destinationPath,
+        replaceToken: /#-newsitename-#/g,
+        siteName: options.sitename,
     });
+
+    await chain.execute()
+        .then(() => {
+            console.log("Finished!");
+        });
+
+    // Delete temporary folder.
+    rimraf(destinationPath, (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log("Cleaned up.");
+        }
+    });
+}
+
+proccess();
