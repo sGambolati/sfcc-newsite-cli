@@ -1,5 +1,6 @@
 const BaseChain = require('../base-chain');
 const replace = require('replace-in-file');
+const fs = require('fs');
 
 class ReplaceContentStep extends BaseChain {
     async execute() {
@@ -11,7 +12,17 @@ class ReplaceContentStep extends BaseChain {
             to: this.data.siteName,
         };
 
-        const results = await replace(options);
+        await replace(options);
+
+        // Replace folders name.
+        fs.renameSync(
+            this.data.dataDestinationPath + '/sites/MelonPunch',
+            this.data.dataDestinationPath + `/sites/${this.data.siteName}`);
+
+        fs.renameSync(
+            this.data.dataDestinationPath + '/libraries/MelonPunchSharedLibrary',
+            this.data.dataDestinationPath + `/libraries/${this.data.siteName}SharedLibrary`);
+
 
         return await super.execute();
     }
