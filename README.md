@@ -1,6 +1,10 @@
 # sfcc-newsite-cli
 SalesForce New Site tool
 
+## Dependencies
+```bash
+npm install -g pkg
+```
 
 ## Example usage
 ```bash
