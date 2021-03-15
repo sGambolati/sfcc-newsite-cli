@@ -1,3 +1,5 @@
+[![DeepScan grade](https://deepscan.io/api/teams/13286/projects/16286/branches/345929/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=13286&pid=16286&bid=345929)
+
 # sfcc-newsite-cli
 SalesForce New Site tool
 
