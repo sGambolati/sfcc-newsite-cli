@@ -28,7 +28,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [sGambolati/sfcc-newsite-cli](https://github.com/sGambolati/sfcc-newsite-cli)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|13<br/>Tools used|12/14/23 <br/>Report generated|
+|14<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -109,13 +109,14 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (6)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (7)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (6)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (7)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
 |[archiver](https://www.npmjs.com/archiver)|v4.0.1|04/20/20|Sebastian Gambolati |MIT|N/A|
+|[chalk](https://www.npmjs.com/chalk)|v4.0.0|04/17/20|Sebastian Gambolati |MIT|N/A|
 |[ncp](https://www.npmjs.com/ncp)|v2.0.0|04/17/20|Sebastian Gambolati |MIT|N/A|
 |[replace-in-file](https://www.npmjs.com/replace-in-file)|v5.0.2|04/17/20|Sebastian Gambolati |MIT|N/A|
 |[rimraf](https://www.npmjs.com/rimraf)|v3.0.2|04/17/20|Sebastian Gambolati |ISC|N/A|
