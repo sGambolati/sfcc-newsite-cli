@@ -2,7 +2,7 @@ repo_name: sGambolati/sfcc-newsite-cli
 report_id: bd4bafa2b1eeba23c27282c3fec6e6d3
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:15:39+00:00'
+timestamp: '2024-02-29T18:14:26+00:00'
 requested_by: stack-file[bot]
 provider: github
 branch: master
